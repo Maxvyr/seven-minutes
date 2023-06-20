@@ -20,25 +20,19 @@ type WorkActivityProps = {
   seconds: number
 }
 
-export const WorkActivity = ({ workout, seconds }: WorkActivityProps) => {
+const WorkActivity = ({ workout, seconds }: WorkActivityProps) => {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>{workout.name}</CardTitle>
-        <CardDescription>
-          Jumping Jacks, Wall Sit, Push Up, Abdominal Crunch, Step Up onto
-          Chair, Squat, Triceps Dip on Chair, Plank, High Knees Running in
-          Place, Lunge, Push Up and Rotation, Side Plank
-        </CardDescription>
+        <CardDescription>{<p>{workout.description}</p>}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p>Time</p>
-        <p>{workout.time}</p>
-      </CardContent>
+      <CardContent></CardContent>
       <CardFooter className="flex justify-center">
-        <WorkTimer seconds={seconds} />
-        <Button>Pause</Button>
+        <h3 className="text-center font-bold">Timer : {seconds}s</h3>
       </CardFooter>
     </Card>
   )
 }
+
+export default WorkActivity
