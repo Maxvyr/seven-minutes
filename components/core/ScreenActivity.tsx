@@ -5,15 +5,15 @@ import React, { useEffect, useState } from "react"
 import { Workout } from "@/lib/core/workouts"
 import { Button } from "@/components/ui/button"
 
-import { WorkActivity } from "./WorkActivity"
+import WorkActivity from "./WorkActivity"
 
 export const ScreenActivity = ({ workouts }: { workouts: Workout[] }) => {
   const [seconds, setSeconds] = useState(0)
   const [workoutIndex, setWorkoutIndex] = useState(0)
   const [isRunning, setIsRunning] = React.useState(false)
 
-  const toggleActivity = () => {
-    setIsRunning(!isRunning)
+  const toggleActivity = (b: boolean) => {
+    setIsRunning(b)
   }
 
   useEffect(() => {
@@ -31,19 +31,19 @@ export const ScreenActivity = ({ workouts }: { workouts: Workout[] }) => {
   }, [toggleActivity])
 
   useEffect(() => {
-    if (seconds > 30) {
+    if (seconds > 40) {
       setWorkoutIndex(workoutIndex + 1)
       setSeconds(0)
     }
   }, [seconds])
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex gap-4">
-        <Button variant="default" onClick={toggleActivity}>
+    <div className="flex flex-col items-center justify-center gap-8">
+      <div className="flex gap-8">
+        <Button variant="default" onClick={(e) => toggleActivity(true)}>
           Start
         </Button>
-        <Button variant="outline" onClick={toggleActivity}>
+        <Button variant="outline" onClick={(e) => toggleActivity(false)}>
           Cancel
         </Button>
       </div>
