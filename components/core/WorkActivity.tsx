@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/card"
 
 import { Workout } from "../../lib/core/workouts"
-import WorkTimer from "./WorkTimer"
 
 type WorkActivityProps = {
   workout: Workout
