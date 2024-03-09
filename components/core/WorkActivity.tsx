@@ -22,7 +22,7 @@ type WorkActivityProps = {
 
 const WorkActivity = ({ workout, seconds }: WorkActivityProps) => {
   return (
-    <Card className="w-full">
+    <Card className="w-full lg:w-3/4">
       <CardHeader>
         <CardTitle>{workout.name}</CardTitle>
         <CardDescription>{<p>{workout.description}</p>}</CardDescription>
