@@ -14,10 +14,27 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  manifest: "/manifest.json",
+  generator: "Next.js",
+  keywords: [
+    "seven-minutes",
+    "seven-minutes-workout",
+    "seven-minutes-pwa",
+    "seven-minutes-workout-pwa",
+  ],
+  authors: [
+    { name: "Vidalinc Maxime" },
+    {
+      name: "Vidalinc Maxime",
+      url: "https://www.x.com/maxvidalinc",
+    },
+  ],
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
